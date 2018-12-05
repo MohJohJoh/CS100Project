@@ -1,0 +1,28 @@
+<html>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAj0LpBwqd7mWgIyamEMMOqnpZg9cZ_-sc",
+    authDomain: "cs100raspberrypi.firebaseapp.com",
+    databaseURL: "https://cs100raspberrypi.firebaseio.com",
+    projectId: "cs100raspberrypi",
+    storageBucket: "",
+    messagingSenderId: "308725239159"
+  };
+  firebase.initializeApp(config);
+
+  var db = firebase.database().ref("temperature");
+   var stuff;
+  db.on("value",function(result){
+       info = result.val()
+	   for(var key in info){
+			document.write(info[key].temp + "<br>")
+	   }
+  })
+
+</script>
+
+
+
+</html>
