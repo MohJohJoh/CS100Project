@@ -12,7 +12,7 @@
   };
   firebase.initializeApp(config);
 
-  var db = firebase.database().ref("temperature");
+  var db = firebase.database.limitToLast(5).ref("temperature");
    var stuff;
 db.on("value",function(result){
        info = result.val()
