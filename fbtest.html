@@ -14,13 +14,15 @@
 
   var db = firebase.database().ref("temperature");
    var stuff;
-  db.on("value",function(result){
+ db.on("value",function(result){
        info = result.val()
+table = '<table>';
        for(var key in info){
     const splitTemp = info[key].temp.split(',');
-    document.write(splitTemp[0]+ "<br>");
-    document.write(splitTemp[1]+ "<br>");
+table = table + '<tr><td>'+splitTemp.join('</td><td>')+'</tr>';
        }
+table = table+ '</table>';
+document.write(table);
   })
 
 </script>
