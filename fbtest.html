@@ -16,7 +16,7 @@
    var stuff;
  db.on("value",function(result){
        info = result.val()
-table = '<table><tr><th>farenheight </th><th>celcius </th></tr>';
+table = '<table><tr><th>Celcius </th><th>Farenheight </th></tr>';
        for(var key in info){
     const splitTemp = info[key].temp.split(',');
 table = table + '<tr><td>'+splitTemp.join('</td><td>')+'</tr>';
