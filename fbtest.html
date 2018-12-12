@@ -16,9 +16,11 @@
    var stuff;
   db.on("value",function(result){
        info = result.val()
-	   for(var key in info){
-			document.write(info[key].temp + "<br>")
-	   }
+       for(var key in info){
+    const splitTemp = info[key].temp.split(',');
+    document.write(splitTemp[0]+ "<br>");
+    document.write(splitTemp[1]+ "<br>");
+       }
   })
 
 </script>
