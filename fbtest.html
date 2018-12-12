@@ -12,9 +12,9 @@
   };
   firebase.initializeApp(config);
 
-  var db = firebase.database.ref("temperature").limitToFirst(5);
+  var db = firebase.database.ref("temperature");
    var stuff;
-db.on("value",function(result){
+db.on("value",function(result).limitToFirst(5){
        info = result.val()
 table = '<style>table, th, td {border: 1px solid black;}</style><table><tr><th>Celsius </th><th>Fahrenheit </th></tr>';
        for(var key in info){
